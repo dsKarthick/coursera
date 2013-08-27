@@ -1,0 +1,7 @@
+#!/usr/local/bin/octave -qf
+
+function sum = add (num1 , num2)
+  sum = num1 + num2;
+endfunction
+
+printf("Sum of %d & %d is %d \n",1,2,add(1,2)); 
