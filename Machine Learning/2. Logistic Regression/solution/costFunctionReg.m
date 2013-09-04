@@ -14,8 +14,7 @@ sig = sigmoid(X*theta);
 limit = size(X)(:,2);
 
 reg = sum(theta'(:,2:limit) .* theta'(:,2:limit));
-
-J = (1/(0.5 * m)) .* sum((-1) .* y .* log(sig) - (1-y) .* log(1-sig)) + (lambda/(2*m)) .* reg;
+J = 1/(2 * m) .* sum((-1) .* y .* log(sig) - (1-y) .* log(1-sig)) + (lambda/(2*m)) .* reg;
 grad = ((1/m) .* (sig-y)' * X) .+ ([0 (lambda/m).*theta'(:,2:end)]) ;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta.
